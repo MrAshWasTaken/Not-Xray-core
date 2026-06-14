@@ -58,7 +58,7 @@ jobs:
         if: steps.check-assets.outputs.missing == 'true'
         uses: actions/github-script@v9
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.MY_PAT }}
           script: |
             const { owner, repo } = context.repo;
             await github.rest.actions.createWorkflowDispatch({
